@@ -1,248 +1,166 @@
-# Pet Shop
+# Modelagem de Banco de Dados - Pet Shop Pata Feliz
 
-# Projeto Integrador — ERP para Pet Shop
+Projeto acadêmico de modelagem de dados para a empresa fictícia **Pata Feliz**, um pet shop que comercializa produtos para animais e oferece serviços como banho e tosa.
 
-> Modelagem conceitual dos processos de um pet shop.
+> A versão em PDF também está anexada neste repositório: [Banco de dados - Projeto 3.pdf](Banco%20de%20dados%20-%20Projeto%203.pdf).
 
-> Grupo 5 - Integrantes:
+## Integrantes
 
-```
-  Breno Freire — 47787031
-  Emylly Nickolly Viana de Oliveira — 47642785
-  Gustavo Lima — 47958561
-  Murilo Neves — 47443855
-  Nickyson Poliacov — 47765798
-  Pedro Henrique Amaral — 47580488
-  Renan Rodrigues — 47497521
-  Richard Fernandes — 47934077
-  Thales Alexandre — 47645474
-  Adrian Cristian — 47567210
-```
+- Adrian Cristian dos Santos - RGM 47567210
+- Breno da Silva Freire Cordeiro - RGM 47787031
+- Emylly Nickolly Viana de Oliveira - RGM 47642785
+- Murilo Neves Aguiar - RGM 47443855
+- Nickyson Alves Pereira Poliacov - RGM 47765798
+- Pedro Henrique Amaral Silva - RGM 47580488
+- Renan Rodrigues dos Santos - RGM 47497521
+- Richard Fernandes Glogovchan - RGM 47934077
+- Thales Alexandre - RGM 47645474
 
-## 1. Identificação da equipe
+## 1. Sobre a empresa
 
-- Curso: Engenharia de Software
-- Disciplina: Modelagem de Dados
+A Pata Feliz é uma micro ou pequena empresa do segmento pet shop. Atende principalmente clientes que possuem cães e gatos. Comercializa rações, petiscos, brinquedos, produtos de higiene e acessórios, além de oferecer serviços como banho e tosa.
 
-- Professor(a): Clóvis
+O negócio precisa organizar informações de clientes, animais, produtos, estoque, serviços, funcionários, vendas e pagamentos. A centralização desses dados facilita consultas e reduz erros e duplicidades causados por controles manuais ou separados.
 
-## 2. Caracterização da empresa
+## 2. Processos de negócio
 
-- Nome da empresa: 
-- Segmento: Pet Shop
-- Produtos
-- Serviços:
-- Clientes: tutores responsáveis por um ou mais pets
-- Funcionários/setores:
-- Funcionamento atual:
+### Atendimento e serviços
 
-A demanda registrada pelo grupo é organizar os dados do pet shop e possibilitar avisos sobre produtos próximos do vencimento. Os detalhes sobre o funcionamento atual da empresa precisam ser confirmados com base no levantamento realizado pelo grupo.
+**Cliente → cadastro/agendamento → animal → atendimento → pagamento**
 
-## 3. Justificativa da escolha
+O cliente solicita um serviço, como banho ou tosa. O funcionário consulta os horários, registra o agendamento para o animal e, quando o serviço é realizado, registra o atendimento e observações relevantes.
 
-O pet shop foi escolhido por envolver processos relacionados entre si: cadastro de tutores e pets, atendimento, venda de produtos, compra de mercadorias, estoque e controle de despesas. A modelagem permite analisar como esses dados se conectam e reduzir registros desconectados.
+### Venda de produtos
 
-## 4. Problemas e necessidades identificados
+**Cliente → escolha dos produtos → venda → pagamento → atualização do estoque**
 
-- Organizar os dados de tutores, pets, produtos e serviços.
-- Acompanhar os atendimentos realizados para cada pet.
-- Registrar produtos vendidos e serviços prestados na mesma conta.
-- Controlar compras e movimentações de estoque.
-- Identificar produtos próximos do vencimento.
+O funcionário registra os produtos e as quantidades da compra. Após a venda, o pagamento é registrado e o estoque é atualizado.
 
-> Confirmar com a empresa quais desses pontos já causam problemas e como são controlados atualmente.
+### Outros processos contemplados
 
-## 5. Processos de negócio
+- Cadastro de clientes e animais;
+- Cadastro de funcionários, produtos e serviços;
+- Agendamento e realização de serviços;
+- Registro de vendas, itens vendidos e pagamentos;
+- Controle de entrada e saída de produtos do estoque.
 
-1. Cadastrar tutor e associar seus pets.
-2. Registrar o atendimento de um pet e os serviços realizados.
-3. Montar um pedido com produtos e, quando houver, atendimentos.
-4. Registrar o pagamento do pedido.
-5. Registrar compras de fornecedores e atualizar o estoque.
-6. Registrar despesas operacionais e acompanhar seus pagamentos.
-7. Consultar produtos próximos do vencimento.
+## 3. Problemas identificados
 
-## 6. Requisitos funcionais
+| Problema | Consequência |
+|---|---|
+| Cadastro manual de clientes | Possibilidade de informações duplicadas |
+| Informações dos animais não centralizadas | Dificuldade para consultar o histórico |
+| Controle manual do estoque | Erros na quantidade disponível |
+| Agendamentos não centralizados | Risco de conflitos de horários |
+| Vendas separadas do estoque | Estoque desatualizado |
+| Informações de serviços espalhadas | Dificuldade para consultar atendimentos anteriores |
+| Pagamentos não integrados às demais informações | Dificuldade para acompanhar as vendas |
+| Falta de relatórios | Dificuldade para analisar o negócio |
 
-- RF01 — O sistema deverá cadastrar tutores e pets.
-- RF02 — O sistema deverá associar pets a um ou mais tutores.
-- RF03 — O sistema deverá registrar atendimentos, pets atendidos, funcionários responsáveis e serviços prestados.
-- RF04 — O sistema deverá registrar pedidos com itens de produto e atendimentos.
-- RF05 — O sistema deverá registrar o pagamento associado ao pedido.
-- RF06 — O sistema deverá cadastrar produtos, fornecedores, compras e itens de compra.
-- RF07 — O sistema deverá registrar entradas e saídas de estoque.
-- RF08 — O sistema deverá avisar sobre produtos próximos do vencimento.
-- RF09 — O sistema deverá registrar despesas e suas categorias.
+## 4. Requisitos funcionais
 
-## 7. Requisitos não funcionais
+- **RF01:** Cadastrar clientes.
+- **RF02:** Cadastrar animais.
+- **RF03:** Cadastrar funcionários.
+- **RF04:** Cadastrar produtos.
+- **RF05:** Cadastrar serviços.
+- **RF06:** Permitir realizar agendamentos.
+- **RF07:** Registrar os serviços realizados.
+- **RF08:** Registrar vendas.
+- **RF09:** Registrar os produtos vendidos.
+- **RF10:** Registrar pagamentos.
+- **RF11:** Controlar o estoque dos produtos.
+- **RF12:** Consultar o histórico de serviços de um animal.
+- **RF13:** Consultar o histórico de compras de um cliente.
+- **RF14:** Consultar os agendamentos.
 
-Os requisitos abaixo são propostas para o grupo validar:
+## 5. Requisitos não funcionais
 
-- RNF01 — O sistema deverá restringir o acesso aos dados pessoais de tutores.
-- RNF02 — O sistema deverá manter consistência entre pedidos, pagamentos e estoque.
-- RNF03 — O sistema deverá permitir consultar os registros de forma clara.
-- RNF04 — O sistema deverá manter histórico suficiente para consultar compras e atendimentos anteriores.
+- **RNF01:** Controlar o acesso dos usuários conforme seu perfil.
+- **RNF02:** Proteger os dados dos clientes.
+- **RNF03:** Manter registro das operações realizadas pelos usuários.
+- **RNF04:** Apresentar consultas em tempo adequado para o atendimento.
+- **RNF05:** Oferecer uma interface simples para os funcionários.
+- **RNF06:** Armazenar os dados de forma confiável.
 
-## 8. Regras de negócio
+## 6. Regras de negócio
 
-- RN01 — Um tutor pode estar associado a vários pets, e um pet pode estar associado a vários tutores.
-- RN02 — A relação entre tutor e pet será representada por `TUTELA`, identificada no modelo lógico pela chave composta `id_tutor` + `id_pet`.
-- RN03 — Cada atendimento pertence a um único pet. Um pet pode possuir vários atendimentos. O grupo registrou PET `(1,N)` e ATENDIMENTO `(1,1)`; confirmar se um pet pode ser cadastrado antes do primeiro atendimento. Se puder, a cardinalidade mínima de PET deve ser zero.
-- RN04 — Cada atendimento tem um funcionário responsável; um funcionário pode realizar vários atendimentos.
-- RN05 — Um atendimento pode incluir um ou mais serviços, e um serviço pode aparecer em vários atendimentos.
-- RN06 — Cada pedido pertence a um tutor.
-- RN07 — Um pedido pode conter itens de produto e atendimentos, permitindo cobrar produtos e serviços juntos.
-- RN08 — Um item de pedido representa um único produto e registra quantidade e preço unitário praticado naquela venda.
-- RN09 — O pedido terá um único pagamento associado, que quita o total dos produtos e serviços. Se o negócio permitir pagamentos parciais, esta regra e a cardinalidade deverão ser alteradas.
-- RN10 — Cada compra é realizada com um fornecedor e contém um ou mais itens de compra.
-- RN11 — Cada item de compra corresponde a um produto e registra quantidade e preço unitário de aquisição.
-- RN12 — Entradas e saídas de produtos devem gerar movimentações de estoque.
-- RN13 — Cada despesa operacional deve ser classificada em uma categoria e registrada por um funcionário.
-- RN14 — Uma compra de produto para revenda atualiza o estoque. Ela não deve ser duplicada como despesa operacional; se o sistema precisar controlar valores a pagar ao fornecedor, isso deverá ser modelado separadamente.
-- RN15 — O prazo que define “próximo do vencimento” deverá ser definido pelo grupo ou pela empresa.
+- **RN01:** Um cliente pode possuir vários animais.
+- **RN02:** Cada animal pertence a apenas um cliente.
+- **RN03:** Um cliente pode realizar várias compras.
+- **RN04:** Cada compra pertence a apenas um cliente.
+- **RN05:** Uma compra deve possuir pelo menos um produto.
+- **RN06:** Um produto pode estar presente em várias compras.
+- **RN07:** Um produto pode possuir vários fornecedores.
+- **RN08:** Um fornecedor pode fornecer vários produtos.
+- **RN09:** Um animal pode realizar vários serviços ao longo do tempo.
+- **RN10:** Um serviço realizado deve estar associado a um animal.
+- **RN11:** Um funcionário pode realizar vários atendimentos.
+- **RN12:** Cada atendimento deve ser realizado por um funcionário.
 
-## 9. Restrições e políticas organizacionais
+## 7. Restrições e políticas organizacionais
 
-Ainda precisam ser confirmadas:
+- **RO01:** Somente funcionários autorizados podem alterar o cadastro de produtos.
+- **RO02:** Somente funcionários autorizados podem alterar informações de estoque.
+- **RO03:** O cadastro de um cliente deve conter informações suficientes para identificá-lo.
+- **RO04:** Não deve existir mais de um cadastro para o mesmo cliente.
+- **RO05:** Um produto não pode ser vendido sem quantidade disponível em estoque.
+- **RO06:** Os dados dos clientes só podem ser acessados por funcionários autorizados.
+- **RO07:** O cancelamento de um agendamento deve ser registrado no sistema.
 
-- Se pedidos podem ser cancelados após o pagamento.
-- Se o sistema permite vender produtos sem estoque suficiente.
-- Com quantos dias de antecedência os alertas de vencimento serão enviados.
-- Quais funcionários podem registrar ou alterar despesas.
-- Se um pedido pode ter pagamentos parciais ou apenas um pagamento.
+## 8. Entidades e atributos
 
-## 10. Fluxogramas dos processos
+Os atributos abaixo foram identificados no projeto. Os campos `id_...` são identificadores das respectivas entidades.
 
-### Venda de produto com atendimento na mesma conta
+| Entidade | Atributos |
+|---|---|
+| **Cliente** | `id_cliente`, nome, CPF, telefone, e-mail, endereço |
+| **Animal** | `id_animal`, nome, espécie, raça, sexo, data de nascimento, observações |
+| **Funcionário** | `id_funcionario`, nome, CPF, telefone, cargo |
+| **Produto** | `id_produto`, nome, descrição, preço, quantidade em estoque |
+| **Fornecedor** | `id_fornecedor`, razão social, telefone, e-mail |
+| **Serviço** | `id_servico`, nome, descrição, preço |
+| **Agendamento** | `id_agendamento`, data, horário, status |
+| **Atendimento** | `id_atendimento`, data do atendimento, observações |
+| **Venda** | `id_venda`, data da venda, valor total, status |
+| **Item_Venda** | quantidade, preço unitário, subtotal |
+| **Pagamento** | `id_pagamento`, data do pagamento, valor, forma de pagamento, status |
+| **Estoque** | `id_estoque`, quantidade atual, data de atualização |
+| **Fornecimento** | preço de fornecimento, prazo de entrega |
 
-```mermaid
-flowchart TD
-    A([Início]) --> B[Identificar tutor]
-    B --> C[Selecionar produtos]
-    C --> D{Haverá atendimento?}
-    D -- Sim --> E[Selecionar pet e registrar atendimento]
-    E --> F[Adicionar serviços ao atendimento]
-    D -- Não --> G[Consolidar pedido]
-    F --> G
-    G --> H[Calcular total do pedido]
-    H --> I[Registrar pagamento]
-    I --> J[Atualizar estoque dos produtos vendidos]
-    J --> K([Fim])
-```
+## 9. Relacionamentos e cardinalidades
 
-### Compra e entrada em estoque
+A cardinalidade expressa quantas ocorrências de uma entidade podem se relacionar com outra. Neste projeto, as regras descrevem as relações a seguir:
 
-```mermaid
-flowchart TD
-    A([Início]) --> B[Selecionar fornecedor]
-    B --> C[Registrar compra]
-    C --> D[Adicionar itens, quantidades e custos]
-    D --> E[Registrar entrada no estoque]
-    E --> F[Verificar vencimentos]
-    F --> G[Emitir alerta se necessário]
-    G --> H([Fim])
-```
+| Relacionamento | Cardinalidades | Regra resumida |
+|---|---|---|
+| Cliente - possui - Animal | Cliente `(0,N)`; Animal `(1,1)` | Um cliente pode não ter animais cadastrados ou ter vários; cada animal pertence a um cliente. |
+| Cliente - realiza - Venda | Cliente `(0,N)`; Venda `(1,1)` | Um cliente pode realizar várias vendas; cada venda pertence a um cliente. |
+| Venda - possui - Item_Venda | Venda `(1,N)`; Item_Venda `(1,1)` | Uma venda contém pelo menos um item; cada item pertence a uma venda. |
+| Produto - aparece em - Item_Venda | Produto `(0,N)`; Item_Venda `(1,1)` | Um produto pode aparecer em vários itens de venda; cada item referencia um produto. |
+| Fornecedor - fornece - Produto | Fornecedor `(0,N)`; Produto `(0,N)` | Um fornecedor pode fornecer vários produtos e um produto pode ter vários fornecedores. |
+| Produto - possui - Estoque | Produto `(1,1)`; Estoque `(1,1)` | Cada produto possui um controle de estoque. |
+| Animal - possui - Agendamento | Animal `(0,N)`; Agendamento `(1,1)` | Um animal pode ter vários agendamentos; cada agendamento se refere a um animal. |
+| Agendamento - gera - Atendimento | Agendamento `(0,1)`; Atendimento `(1,1)` | Um agendamento pode ainda não ter sido realizado; cada atendimento registrado vem de um agendamento. |
+| Funcionário - realiza - Atendimento | Funcionário `(0,N)`; Atendimento `(1,1)` | Um funcionário pode realizar vários atendimentos; cada atendimento é realizado por um funcionário. |
+| Serviço - é utilizado em - Atendimento | Serviço `(0,N)`; Atendimento `(1,1)` | Um serviço pode ser utilizado em vários atendimentos; cada atendimento registra um serviço. |
+| Venda - possui - Pagamento | Definida no diagrama do projeto | A venda está relacionada ao pagamento; a cardinalidade não foi detalhada no texto-base. |
+| Cliente - solicita - Agendamento | Definida no diagrama do projeto | O cliente solicita o agendamento do serviço. |
 
-## 11. Entidades propostas
+### Relacionamento muitos para muitos
 
-- TUTOR
-- PET
-- TUTELA — entidade associativa entre TUTOR e PET
-- FUNCIONARIO
-- ATENDIMENTO
-- SERVICO
-- ITEM_ATENDIMENTO — associação entre ATENDIMENTO e SERVICO, caso seja necessário guardar dados próprios do serviço realizado
-- PEDIDO
-- ITEM_PEDIDO — associação entre PEDIDO e PRODUTO
-- PRODUTO
-- PAGAMENTO
-- FORNECEDOR
-- COMPRA
-- ITEM_COMPRA — associação entre COMPRA e PRODUTO
-- MOVIMENTACAO_ESTOQUE
-- CATEGORIA_DESPESA
-- DESPESA
-- PAGAMENTO_DESPESA, caso seja necessário guardar quitações separadamente
+**Fornecedor ↔ Produto** é um relacionamento **N:N**: um fornecedor pode fornecer diversos produtos, e um produto pode ser fornecido por diversos fornecedores.
 
-Se produtos do mesmo tipo puderem ter lotes com vencimentos diferentes, avaliar também a entidade `LOTE_PRODUTO`. A validade não deve ficar apenas em PRODUTO se cada reposição puder ter uma data de vencimento distinta.
+A entidade associativa **Fornecimento** representa essa relação e permite armazenar dados próprios do vínculo, como `preço_fornecimento` e `prazo_entrega`.
 
-## 12. Atributos preliminares
+A entidade **Item_Venda** também detalha os produtos que compõem uma venda, armazenando quantidade, preço unitário e subtotal.
 
-- TUTOR: id_tutor, nome, CPF, telefone, e-mail.
-- PET: id_pet, nome, espécie, raça, sexo, data_nascimento, observações.
-- FUNCIONARIO: id_funcionario, nome, CPF, telefone, cargo.
-- ATENDIMENTO: id_atendimento, data_hora_inicio, data_hora_fim, status, observações.
-- SERVICO: id_servico, nome, descrição, valor_base, duração_estimada.
-- ITEM_ATENDIMENTO: quantidade e valor_cobrado.
-- PEDIDO: id_pedido, data_pedido, status.
-- ITEM_PEDIDO: id_item_pedido, quantidade, preço_unitario.
-- PRODUTO: id_produto, nome, descrição, preço_venda, estoque_atual, estoque_minimo.
-- PAGAMENTO: id_pagamento, data_pagamento, valor_pago, método, status.
-- FORNECEDOR: id_fornecedor, nome, CNPJ, telefone, e-mail.
-- COMPRA: id_compra, data_compra, status.
-- ITEM_COMPRA: id_item_compra, quantidade, preço_unitario.
-- MOVIMENTACAO_ESTOQUE: id_movimentacao, data_hora, tipo, quantidade, motivo.
-- CATEGORIA_DESPESA: id_categoria_despesa, nome.
-- DESPESA: id_despesa, descrição, valor, data_despesa, status.
+## 10. Justificativas das entidades associativas
 
-A lista é preliminar. O dicionário de dados deverá descrever os atributos, seus significados e regras.
+- **Item_Venda:** representa cada produto incluído em uma venda. É necessário para registrar quantidade, preço unitário e subtotal de cada item.
+- **Fornecimento:** representa a relação entre fornecedor e produto. Como essa relação é N:N e possui informações próprias, como preço de fornecimento e prazo de entrega, esses dados ficam associados a Fornecimento.
 
-## 13. Relacionamentos
+## 11. Arquivos do projeto
 
-- TUTOR tutela PET.
-- TUTOR solicita PEDIDO.
-- PEDIDO agrupa ATENDIMENTO.
-- PET recebe ATENDIMENTO.
-- FUNCIONARIO executa ATENDIMENTO.
-- ATENDIMENTO inclui SERVICO.
-- PEDIDO contém ITEM_PEDIDO.
-- ITEM_PEDIDO identifica PRODUTO.
-- PEDIDO é quitado por PAGAMENTO.
-- FORNECEDOR fornece COMPRA.
-- COMPRA possui ITEM_COMPRA.
-- ITEM_COMPRA identifica PRODUTO.
-- PRODUTO possui MOVIMENTACAO_ESTOQUE.
-- ITEM_COMPRA pode originar entrada no estoque.
-- ITEM_PEDIDO pode originar saída do estoque.
-- FUNCIONARIO registra DESPESA.
-- CATEGORIA_DESPESA classifica DESPESA.
-
-## 14. Cardinalidades preliminares
-
-| Relacionamento | Primeira entidade | Segunda entidade |
-|---|---:|---:|
-| TUTOR — TUTELA — PET | Tutor `(0,N)` | Pet `(1,N)` |
-| TUTOR — SOLICITA — PEDIDO | Tutor `(0,N)` | Pedido `(1,1)` |
-| PEDIDO — AGRUPA — ATENDIMENTO | Pedido `(0,N)` | Atendimento `(0,1)` |
-| PET — RECEBE — ATENDIMENTO | Pet `(1,N)`* | Atendimento `(1,1)` |
-| FUNCIONARIO — EXECUTA — ATENDIMENTO | Funcionário `(0,N)` | Atendimento `(1,1)` |
-| ATENDIMENTO — INCLUI — SERVICO | Atendimento `(1,N)` | Serviço `(0,N)` |
-| PEDIDO — CONTÉM — ITEM_PEDIDO | Pedido `(0,N)` | Item `(1,1)` |
-| ITEM_PEDIDO — IDENTIFICA — PRODUTO | Item `(1,1)` | Produto `(0,N)` |
-| PEDIDO — É QUITADO POR — PAGAMENTO | Pedido `(0,1)` | Pagamento `(1,1)` |
-| FORNECEDOR — FORNECE — COMPRA | Fornecedor `(0,N)` | Compra `(1,1)` |
-| COMPRA — POSSUI — ITEM_COMPRA | Compra `(1,N)` | Item `(1,1)` |
-| ITEM_COMPRA — IDENTIFICA — PRODUTO | Item `(1,1)` | Produto `(0,N)` |
-| FUNCIONARIO — REGISTRA — DESPESA | Funcionário `(0,N)` | Despesa `(1,1)` |
-| CATEGORIA_DESPESA — CLASSIFICA — DESPESA | Categoria `(0,N)` | Despesa `(1,1)` |
-
-\* Confirmar o mínimo de PET. Se o cadastro puder existir sem atendimento prévio, usar `(0,N)`.
-
-## 15. Dicionário de dados conceitual
-
-O dicionário completo ficará em [`docs/dicionario-de-dados.md`](docs/dicionario-de-dados.md) e deverá conter nome do campo, entidade, significado, nulidade, identificação como PK/FK no modelo lógico e regra associada.
-
-## 16. Diagrama Entidade-Relacionamento
-
-Arquivo: [`docs/DER-conceitual.png`](docs/DER-conceitual.png)
-
-O DER conceitual deverá apresentar entidades, atributos, relacionamentos, cardinalidades e atributos de relacionamentos. O modelo lógico, com PKs e FKs em tabelas, deverá ser mantido como arquivo separado se também for solicitado.
-
-## 17. Justificativas técnicas
-
-- `TUTELA` resolve a relação N:N entre TUTOR e PET. No modelo lógico, a combinação dos identificadores do tutor e do pet evita repetir o mesmo vínculo.
-- `ITEM_PEDIDO` guarda quantidade e preço da ocorrência do produto no pedido, em vez de atribuir esses dados ao produto.
-- `ITEM_COMPRA` permite registrar vários produtos, quantidades e custos dentro de uma compra.
-- `ITEM_ATENDIMENTO` guarda informações específicas dos serviços realizados. Dados já pertencentes a ATENDIMENTO, como pet, funcionário, data e observações gerais, não devem ser repetidos nessa entidade.
-- O pagamento pertence ao pedido consolidado para que produtos e serviços sejam cobrados juntos.
-- Faturamento e lucro são resultados calculados a partir de vendas, pagamentos, custos e despesas; só devem virar entidades se houver um processo que precise registrar esses eventos como dados próprios.
+- `README.md` - apresentação, processos, requisitos, regras de negócio e resumo da modelagem.
+- `Banco de dados - Projeto 3.pdf` - documento completo do projeto, incluindo os fluxogramas, o diagrama, o dicionário de dados e os materiais complementares.
