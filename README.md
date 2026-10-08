@@ -1,6 +1,6 @@
 # Modelagem de Banco de Dados - Pet Shop Pata Feliz
 
-Projeto acadêmico de modelagem de dados para a empresa fictícia **Pata Feliz**, um pet shop que comercializa produtos para animais e oferece serviços como banho e tosa.
+Projeto acadêmico de modelagem de dados para a empresa **Pata Feliz**, um pet shop que comercializa produtos para animais e oferece serviços como banho e tosa.
 
 > A versão em PDF também está anexada neste repositório: [Banco de dados - Projeto 3.pdf](Banco%20de%20dados%20-%20Projeto%203.pdf).
 
