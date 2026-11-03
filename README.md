@@ -7,8 +7,6 @@ Projeto acadêmico de modelagem de dados para a empresa **Pata Feliz**, um pet s
 ## Integrantes
 
 - Adrian Cristian dos Santos - RGM 47567210
-- Breno da Silva Freire Cordeiro - RGM 47787031
-- Emylly Nickolly Viana de Oliveira - RGM 47642785
 - Murilo Neves Aguiar - RGM 47443855
 - Nickyson Alves Pereira Poliacov - RGM 47765798
 - Pedro Henrique Amaral Silva - RGM 47580488
