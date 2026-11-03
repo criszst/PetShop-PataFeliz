@@ -161,4 +161,4 @@ A entidade **Item_Venda** também detalha os produtos que compõem uma venda, ar
 ## 11. Arquivos do projeto
 
 - `README.md` - apresentação, processos, requisitos, regras de negócio e resumo da modelagem.
-- `Banco de dados - Projeto 3.pdf` - documento completo do projeto, incluindo os fluxogramas, o diagrama, o dicionário de dados e os materiais complementares.
+- `Banco de dados - Projeto 3.pdf` - documento completo do projeto, incluindo os fluxogramas, o diagrama, o dicionário de dados e os materiais complementares..
