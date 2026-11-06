@@ -156,7 +156,7 @@ A entidade **Item_Venda** também detalha os produtos que compõem uma venda, ar
 ## 10. Justificativas das entidades associativas
 
 - **Item_Venda:** representa cada produto incluído em uma venda. É necessário para registrar quantidade, preço unitário e subtotal de cada item.
-- **Fornecimento:** representa a relação entre fornecedor e produto. Como essa relação é N:N e possui informações próprias, como preço de fornecimento e prazo de entrega, esses dados ficam associados a Fornecimento.
+- **Fornecimento:** representa a relação entre fornecedor e produto. Como essa relação é N:N e possui informações próprias, como preço de fornecimento e prazo de entrega, esses dados ficam associados a Fornecimento..
 
 ## 11. Arquivos do projeto
 
