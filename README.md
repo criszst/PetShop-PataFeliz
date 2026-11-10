@@ -30,7 +30,7 @@ Projeto acadêmico - **Grupo 05**, desenvolvido na disciplina de Modelagem de Da
 | [Documento final — Grupo 05](Parte_2/Grupo_05.pdf) | Problema, objetivos, RF/RNF, regras de negócio, DER, dicionário, modelo lógico, normalização, fluxogramas, controle financeiro, consultas e apêndices SQL. |
 | [Apresentação](Parte_2/Slide_Apresentacao.pptx) | Slides de síntese e roteiro de apresentação. |
 | [DER da Parte 2](Parte_2/DER/der.png) | Imagem do diagrama final. |
-| [Criação do banco](Parte_2/SQL/database.sql) | Estrutura das tabelas e restrições. |
+| [Criação do banco](Parte_2/SQL/criar_database.sql) | Estrutura das tabelas e restrições. |
 | [Inserção de dados](Parte_2/SQL/insercao_dados.sql) | Dados fictícios para demonstração. |
 | [Consultas SQL](Parte_2/SQL/consultas.sql) | Consultas gerenciais e de auditoria. |
 
