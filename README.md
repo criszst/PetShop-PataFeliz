@@ -1,8 +1,7 @@
 # Pata Feliz — modelagem e implementação de banco de dados
 
-Projeto acadêmico do **Grupo 05**, desenvolvido na disciplina de Modelagem de Dados da UNICID. A proposta organiza os dados de um pet shop que vende produtos, agenda e executa serviços, controla compras e estoque e registra obrigações e movimentos financeiros.
+Projeto acadêmico - **Grupo 05**, desenvolvido na disciplina de Modelagem de Dados. A proposta organiza os dados de um pet shop que vende produtos, agenda e executa serviços, controla compras e estoque e registra obrigações e movimentos financeiros.
 
-> **Por onde começar:** leia o [documento final](Parte_2/Grupo_05.pdf), consulte o [DER da segunda parte](Parte_2/DER/der.png) e, para explorar a implementação, siga a [ordem dos scripts SQL](#como-executar-os-scripts).
 
 ## Índice
 
@@ -56,18 +55,6 @@ Projeto acadêmico do **Grupo 05**, desenvolvido na disciplina de Modelagem de D
 - `CONTA_A_RECEBER` descreve valores previstos; `PAGAMENTO`, valores efetivamente recebidos. `CONTA_A_PAGAR` e `BAIXA_PAGAR` representam obrigações e pagamentos efetuados. `MOVIMENTO_CAIXA` registra entradas e saídas efetivas.
 - As entradas, saídas e ajustes de produtos são históricos em `MOVIMENTACAO_ESTOQUE`.
 
-
-## Como executar os scripts
-
-O documento especifica **MySQL 8.0+**. Execute os arquivos nesta ordem, a partir da raiz do repositório:
-
-```bash
-mysql -u SEU_USUARIO -p < Parte_2/SQL/database.sql
-mysql -u SEU_USUARIO -p < Parte_2/SQL/insercao_dados.sql
-mysql -u SEU_USUARIO -p < Parte_2/SQL/consultas.sql
-```
-
-Use uma instância de testes: o script de criação transcrito no PDF contém `DROP DATABASE IF EXISTS pata_feliz`, que apaga um banco existente com esse nome. Antes de publicar comandos de execução como definitivos, confirme que os três arquivos da pasta `SQL` correspondem aos scripts transcritos nos apêndices do PDF e que as consultas produzem os resultados esperados.
 
 ## Integrantes
 
